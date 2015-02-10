@@ -1,0 +1,16 @@
+.zoom_img img {
+	margin:50px;
+	height:100px;
+	width:100px;
+	-moz-transition:-moz-transform 0.5s ease-in; 
+	-webkit-transition:-webkit-transform 0.5s ease-in; 
+	-o-transition:-o-transform 0.5s ease-in;
+}
+
+.zoom_img img:hover {
+	-moz-transform:scale(2); 
+	-webkit-transform:scale(2);
+	-o-transform:scale(2);
+}
+
+
