@@ -16,7 +16,7 @@ $(function () {
               success    : function (res) {
                 if (res.success === true) {
                    $('#myModal1').hide();
-                   alert(res.message);
+                   bootbox.alert(res.message);
                 }
               }
             });
@@ -36,20 +36,23 @@ $(function () {
 
     $('button#btnDelete').on('click', function (e) {
         e.preventDefault();
-        var con = confirm('Are you sure you want to delete?');
-        if (con) {
-          var postDelete = $.post('deleteAlbum', {id:$(this).data('id')}).promise();
-          $.when(postDelete.done()).then( function ( response ) {
-              alert(response.message);
-          });
-        }
+        var $this = $(this);
+        bootbox.confirm('Are you sure you want to delete this?', function(confirm) {
+
+            if (confirm) {
+              var postDelete = $.post('deleteAlbum', {id:$this.data('id')}).promise();
+                $.when(postDelete.done()).then( function ( response ) {
+                   bootbox.alert(response.message);
+                });
+            }
+        });
         
     });
 
 
     //image lightbox
     $('a.gallery-img').nivoLightbox({
-      effect:'dropOut',
+      effect:'slideDown',
       theme: 'default',
       keyboardNav: true,                          
          clickOverlayToClose: true,                  

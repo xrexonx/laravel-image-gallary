@@ -16,7 +16,7 @@ class CreateImagesTable extends Migration {
 		{
 			$table->increments('id');
 			$table->string('image');
-			$table->interger('album_id');
+			$table->integer('album_id');
 			$table->timestamps();
 		});
 	}
