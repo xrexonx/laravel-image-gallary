@@ -11,10 +11,3 @@ Route::post('submitFormData', 'AlbumController@submitAlbum');
 Route::get('showImages/{id?}', 'AlbumController@showImages');
 Route::post('addImages', 'AlbumController@addImage');
 Route::post('deleteAlbum', 'AlbumController@deleteAlbum');
-
-
-
- // Route::post('addImages', function () {
-
- // 	die('asdasdasdas');
- // });
