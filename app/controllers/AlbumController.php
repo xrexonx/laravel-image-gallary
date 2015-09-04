@@ -10,10 +10,10 @@ class AlbumController extends BaseController {
 
         //$validation = Validator::make(Input::all(), $rules);
 
-    	$album = new Album;
+    $album = new Album;
 		$album->album_name = Input::get('albumName');
-		$album->desc = Input::get('desc');
-		$insertFlag = $album->save();
+		$album->desc       = Input::get('desc');
+		$insertFlag        = $album->save();
 
         if ($insertFlag) {
 
