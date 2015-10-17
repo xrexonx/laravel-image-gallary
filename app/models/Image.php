@@ -1,10 +1,12 @@
 <?php
 
-class Image extends Eloquent {
+class Image extends Eloquent
+{
 
-	protected $fillable = array('image', 'album_id');
+    protected $fillable = array('image', 'album_id');
 
-	public function album() {
-	    return $this->belongsTo('Album');
-	}
+    public function album()
+    {
+        return $this->belongsTo('Album');
+    }
 }
